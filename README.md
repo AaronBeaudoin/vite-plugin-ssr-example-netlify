@@ -16,6 +16,11 @@ Extension of https://github.com/AaronBeaudoin/vite-plugin-ssr-example.
 6. Enjoy! 🍹
 
 
+### Caching Non-Static Pages
+
+Netlify doesn't support caching in front of serverless functions, so every request will invoke the function. If this is what you want, great! Otherwise, try check out Netlify [On-demand Builders](https://docs.netlify.com/configure-builds/on-demand-builders) for a potential solution, with some limitations.
+
+
 ### Going Full Static
 
 If your pages don't need to change often, you may want to pre-render _all pages_ to static files and deploy your site without a serverless function. To deploy this way instead:
