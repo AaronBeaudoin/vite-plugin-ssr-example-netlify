@@ -10,6 +10,7 @@
     "preview": "run-s build preview:server"
   },
   "dependencies": {
+    "@netlify/functions": "^1.0.0",
     "vite-plugin-ssr": "^0.4.12",
     "vue": "^3.2.37"
   },
