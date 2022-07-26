@@ -16,11 +16,6 @@ Extension of https://github.com/AaronBeaudoin/vite-plugin-ssr-example.
 6. Enjoy! 🍹
 
 
-### Caching Non-Static Pages
-
-Netlify doesn't support caching in front of serverless functions, so every request will invoke the function. If this is what you want, great! Otherwise, try check out Netlify [On-demand Builders](https://docs.netlify.com/configure-builds/on-demand-builders) for a potential solution, with some limitations.
-
-
 ### Going Full Static
 
 If your pages don't need to change often, you may want to pre-render _all pages_ to static files and deploy your site without a serverless function. To deploy this way instead:
@@ -38,8 +33,14 @@ If your pages don't need to change often, you may want to pre-render _all pages_
 - The `functions.directory` option in `netlify.toml` specifies the path to our project's serverless functions. In our project, we simply use `functions/`. All of our routes will be handled by a single serverless function, which is exported as `handler` from [`functions/index.ts`](functions/index.ts). This function imports the [`renderPage`](https://vite-plugin-ssr.com/renderPage) function from `vite-plugin-ssr`, which internally creates a dependency on the `dist/server/` directory created during the build. Types for our function are provided by [`@netlify/functions`](https://www.npmjs.com/package/@netlify/functions).
 - The `redirects` option in `netlify.toml` is an array of redirect rules we would like to use for our project's deployment. In our project, we want all requests for which there exists no static file to be handled by our serverless function. We specify `/*` for the `redirects[].from` option to catch all routes. We specify `/.netlify/functions/index` for the `redirects[].to` option because that path is where Netlify will deploy our function as described [here](https://docs.netlify.com/functions/build-with-javascript) in the docs. Finally, we specify a `200` for the `status` option, which causes our rule to become a [rewrite](https://docs.netlify.com/routing/redirects/rewrites-proxies/).
 
+
 ### Points of Integration (Summary)
 
 - The `netlify.toml` file contains Netlify deployment configuration.
 - The `functions/index.ts` file contains our serverless function code.
 - The `@netlify/functions` package provides types for our serverless function.
+
+
+### Caching Non-Static Pages
+
+Netlify doesn't support caching in front of serverless functions, so every incoming request that isn't to a static file will invoke your serverless function. If this is what you want, great! Otherwise, try check out Netlify [On-demand Builders](https://docs.netlify.com/configure-builds/on-demand-builders) for a potential solution, with some limitations.
