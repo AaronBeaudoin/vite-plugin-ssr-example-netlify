@@ -2,7 +2,7 @@
 
 A full example for deploying [`vite-plugin-ssr`](https://vite-plugin-ssr.com) on [Netlify](https://www.netlify.com).
 
-Based on https://github.com/AaronBeaudoin/vite-plugin-ssr-example.
+Extension of https://github.com/AaronBeaudoin/vite-plugin-ssr-example.
 
 
 ## How To Deploy
