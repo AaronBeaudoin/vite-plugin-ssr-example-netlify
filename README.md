@@ -43,4 +43,4 @@ If your pages don't need to change often, you may want to pre-render _all pages_
 
 ### Caching Non-Static Pages
 
-Netlify doesn't support caching in front of serverless functions, so _every_ incoming request that isn't to a static file will invoke your serverless function. If this is what you want, great! Otherwise, try check out Netlify [On-demand Builders](https://docs.netlify.com/configure-builds/on-demand-builders) for a potential solution, with some limitations.
+Netlify doesn't support caching in front of serverless functions, so _every_ incoming request that isn't to a static file will invoke your serverless function. If this is what you want, great! Otherwise, check out Netlify [On-demand Builders](https://docs.netlify.com/configure-builds/on-demand-builders) for a potential solution, with some limitations.
