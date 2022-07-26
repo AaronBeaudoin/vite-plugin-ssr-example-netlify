@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-ssr-example",
+  "name": "vite-plugin-ssr-example-netlify",
   "version": "0.1.0",
   "scripts": {
     "dev": "vite",
