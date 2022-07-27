@@ -21,8 +21,10 @@ Extension of https://github.com/AaronBeaudoin/vite-plugin-ssr-example.
 If your pages don't need to change often, you may want to pre-render _all pages_ to static files and deploy your site without a serverless function. To deploy this way instead:
 
 1. Delete the `functions/` directory.
-2. Remove the `functions` section and applicable `redirects` rules from your `netlify.toml`.
-3. Remove any `doNotPrerender = true` exports from your pages.
+2. Remove the `[functions]` section from your `netlify.toml`.
+3. Change the `to` value for your "catch-all" rewrite to `/404`.
+4. Change the `status` value for your "catch-all" rewrite to `404`.
+5. Remove `doNotPrerender` from all pages (even `_default`).
 4. Deploy! 🚀
 
 
