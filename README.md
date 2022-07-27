@@ -22,8 +22,8 @@ If your pages don't need to change often, you may want to pre-render _all pages_
 
 1. Delete the `functions/` directory.
 2. Remove the `[functions]` section from your `netlify.toml`.
-3. Change the `to` value for your "catch-all" rewrite to `/404`.
-4. Change the `status` value for your "catch-all" rewrite to `404`.
+3. Change the `to` value for your "catch-all" (`/*`) rewrite to `/404`.
+4. Change the `status` value for your "catch-all" (`/*`) rewrite to `404`.
 5. Remove `doNotPrerender` from all pages (even `_default`).
 4. Deploy! 🚀
 
